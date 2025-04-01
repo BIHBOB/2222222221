@@ -2449,3 +2449,263 @@
 2025-04-01 09:57:11,774 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
 2025-04-01 09:57:11,832 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
 2025-04-01 09:57:11,832 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 09:59:46,820 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 09:59:46,828 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 09:59:46,828 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 09:59:46,828 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 09:59:46,828 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 09:59:47,021 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 09:59:47,022 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 10:00:42,056 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 10:00:42,678 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216160169_199735&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4206
+2025-04-01 10:00:42,680 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 10:00:42,680 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 10:00:42,680 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-216160169_199735: 2025-04-02 06:43:47 (МСК)
+2025-04-01 10:00:42,697 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 10:00:43,334 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-43944775_37754&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4185
+2025-04-01 10:00:43,336 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 10:00:43,337 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-43944775_37754: 2025-04-01 03:28:48+03:00
+2025-04-01 10:00:43,337 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-43944775_37754: 2025-04-02 03:18:48 (МСК)
+2025-04-01 10:00:43,341 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 10:00:44,004 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-186300487_37062&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4173
+2025-04-01 10:00:44,005 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 10:00:44,006 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-186300487_37062: 2025-04-01 06:46:18+03:00
+2025-04-01 10:00:44,006 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-186300487_37062: 2025-04-02 06:36:18 (МСК)
+2025-04-01 10:00:44,299 - config - INFO - scheduler:109 - Scheduled parsing for post 151 at 2025-04-02 06:43:47
+2025-04-01 10:00:44,372 - config - INFO - scheduler:109 - Scheduled parsing for post 152 at 2025-04-02 03:18:48
+2025-04-01 10:00:44,443 - config - INFO - scheduler:109 - Scheduled parsing for post 153 at 2025-04-02 06:36:18
+2025-04-01 10:00:44,462 - config - INFO - file_processor:311 - File 0104.html processed successfully. Found 3 VK links.
+2025-04-01 10:01:19,308 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 10:01:19,312 - config - INFO - vk_parser:501 - Получено время публикации из API (МСК): 2025-04-01 06:46:18
+2025-04-01 10:01:19,312 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 10:01:19,314 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 10:01:19,968 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-186300487&item_id=37062&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 323
+2025-04-01 10:01:19,969 - config - DEBUG - vk_parser:47 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 37062, "offset": 0, "owner_id": -186300487, "type": "post"}
+2025-04-01 10:01:20,102 - config - INFO - vk_parser:551 - Успешно обработан пост https://vk.com/wall-186300487_37062 с ID результата 139
+2025-04-01 10:02:05,777 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 10:02:05,777 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 10:02:05,777 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 10:02:05,777 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 10:02:05,777 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 10:02:05,891 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 10:02:05,891 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:20:56,671 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:20:56,674 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:20:56,675 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:20:56,675 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:20:56,675 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:20:56,828 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:20:56,829 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:25:05,789 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:25:06,474 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216160169_199735&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4209
+2025-04-01 12:25:06,476 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:25:06,476 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:25:06,476 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-216160169_199735: 2025-04-02 06:43:47 (МСК)
+2025-04-01 12:25:06,479 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:25:07,073 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-43944775_37754&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4180
+2025-04-01 12:25:07,075 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:25:07,075 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-43944775_37754: 2025-04-01 03:28:48+03:00
+2025-04-01 12:25:07,075 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-43944775_37754: 2025-04-02 03:18:48 (МСК)
+2025-04-01 12:25:07,077 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:25:07,692 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-186300487_37062&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4176
+2025-04-01 12:25:07,693 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:25:07,693 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-186300487_37062: 2025-04-01 06:46:18+03:00
+2025-04-01 12:25:07,693 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-186300487_37062: 2025-04-02 06:36:18 (МСК)
+2025-04-01 12:25:07,946 - config - INFO - scheduler:109 - Scheduled parsing for post 154 at 2025-04-02 06:43:47
+2025-04-01 12:25:07,998 - config - INFO - scheduler:109 - Scheduled parsing for post 155 at 2025-04-02 03:18:48
+2025-04-01 12:25:08,051 - config - INFO - scheduler:109 - Scheduled parsing for post 156 at 2025-04-02 06:36:18
+2025-04-01 12:25:08,065 - config - INFO - file_processor:311 - File 0104.html processed successfully. Found 3 VK links.
+2025-04-01 12:25:59,092 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-04-01 12:29:27,096 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:29:27,099 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:29:27,100 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:29:27,100 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:29:27,100 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:29:27,215 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:29:27,216 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:29:31,009 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:29:31,010 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:29:31,010 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:29:31,010 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:29:31,010 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:29:31,116 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:29:31,116 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:30:17,110 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:30:17,111 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:30:17,111 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:30:17,116 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:30:17,116 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:30:17,171 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:30:17,172 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:32:25,144 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:32:25,757 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216160169_199735&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4209
+2025-04-01 12:32:25,759 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:32:25,759 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:32:25,759 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-216160169_199735: 2025-04-02 06:43:47 (МСК)
+2025-04-01 12:32:25,762 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:32:26,441 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-43944775_37754&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4184
+2025-04-01 12:32:26,443 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:32:26,443 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-43944775_37754: 2025-04-01 03:28:48+03:00
+2025-04-01 12:32:26,443 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-43944775_37754: 2025-04-02 03:18:48 (МСК)
+2025-04-01 12:32:26,446 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:32:27,061 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-186300487_37062&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4174
+2025-04-01 12:32:27,062 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:32:27,063 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-186300487_37062: 2025-04-01 06:46:18+03:00
+2025-04-01 12:32:27,063 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-186300487_37062: 2025-04-02 06:36:18 (МСК)
+2025-04-01 12:32:27,350 - config - INFO - scheduler:109 - Scheduled parsing for post 157 at 2025-04-02 06:43:47
+2025-04-01 12:32:27,424 - config - INFO - scheduler:109 - Scheduled parsing for post 158 at 2025-04-02 03:18:48
+2025-04-01 12:32:27,486 - config - INFO - scheduler:109 - Scheduled parsing for post 159 at 2025-04-02 06:36:18
+2025-04-01 12:32:27,502 - config - INFO - file_processor:311 - File 0104.html processed successfully. Found 3 VK links.
+2025-04-01 12:33:50,151 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:33:50,151 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:33:50,152 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:33:50,152 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:33:50,153 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:33:50,222 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:33:50,222 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:35:48,146 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:35:48,146 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:35:48,146 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:35:48,146 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:35:48,146 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:35:48,206 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:35:48,207 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:37:13,921 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:37:14,519 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216160169_199735&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4204
+2025-04-01 12:37:14,522 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:37:14,522 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:37:14,522 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-216160169_199735: 2025-04-02 06:43:47 (МСК)
+2025-04-01 12:37:14,525 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:37:15,140 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-43944775_37754&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4185
+2025-04-01 12:37:15,143 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:37:15,144 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-43944775_37754: 2025-04-01 03:28:48+03:00
+2025-04-01 12:37:15,144 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-43944775_37754: 2025-04-02 03:18:48 (МСК)
+2025-04-01 12:37:15,146 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:37:15,749 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-186300487_37062&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4175
+2025-04-01 12:37:15,750 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:37:15,751 - config - INFO - file_processor:269 - Получено время публикации из API для https://vk.com/wall-186300487_37062: 2025-04-01 06:46:18+03:00
+2025-04-01 12:37:15,751 - config - INFO - file_processor:291 - Установлено время парсинга для https://vk.com/wall-186300487_37062: 2025-04-02 06:36:18 (МСК)
+2025-04-01 12:37:16,048 - config - INFO - scheduler:109 - Scheduled parsing for post 160 at 2025-04-02 06:43:47
+2025-04-01 12:37:16,111 - config - INFO - scheduler:109 - Scheduled parsing for post 161 at 2025-04-02 03:18:48
+2025-04-01 12:37:16,176 - config - INFO - scheduler:109 - Scheduled parsing for post 162 at 2025-04-02 06:36:18
+2025-04-01 12:37:16,192 - config - INFO - file_processor:311 - File 0104.html processed successfully. Found 3 VK links.
+2025-04-01 12:40:49,871 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-04-01 12:40:58,142 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:40:58,142 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:40:58,143 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:40:58,143 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:40:58,143 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:40:58,197 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:40:58,197 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:41:40,859 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:41:40,860 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:41:40,860 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:41:40,860 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:41:40,860 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:41:40,910 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:41:40,910 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:44:49,065 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:44:49,694 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216160169_199735&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4205
+2025-04-01 12:44:49,697 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:44:49,697 - config - INFO - file_processor:275 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:44:49,697 - config - INFO - file_processor:297 - Установлено время парсинга для https://vk.com/wall-216160169_199735: 2025-04-02 06:43:47 (МСК)
+2025-04-01 12:44:49,700 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:44:50,294 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-43944775_37754&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4185
+2025-04-01 12:44:50,296 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:44:50,296 - config - INFO - file_processor:275 - Получено время публикации из API для https://vk.com/wall-43944775_37754: 2025-04-01 03:28:48+03:00
+2025-04-01 12:44:50,297 - config - INFO - file_processor:297 - Установлено время парсинга для https://vk.com/wall-43944775_37754: 2025-04-02 03:18:48 (МСК)
+2025-04-01 12:44:50,299 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:44:50,919 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-186300487_37062&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4173
+2025-04-01 12:44:50,920 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:44:50,921 - config - INFO - file_processor:275 - Получено время публикации из API для https://vk.com/wall-186300487_37062: 2025-04-01 06:46:18+03:00
+2025-04-01 12:44:50,921 - config - INFO - file_processor:297 - Установлено время парсинга для https://vk.com/wall-186300487_37062: 2025-04-02 06:36:18 (МСК)
+2025-04-01 12:44:51,158 - config - INFO - scheduler:109 - Scheduled parsing for post 163 at 2025-04-02 06:43:47
+2025-04-01 12:44:51,216 - config - INFO - scheduler:109 - Scheduled parsing for post 164 at 2025-04-02 03:18:48
+2025-04-01 12:44:51,275 - config - INFO - scheduler:109 - Scheduled parsing for post 165 at 2025-04-02 06:36:18
+2025-04-01 12:44:51,289 - config - INFO - file_processor:317 - File 0104.html processed successfully. Found 3 VK links.
+2025-04-01 12:45:11,271 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:45:11,272 - config - INFO - file_processor:275 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:45:11,272 - config - ERROR - file_processor:319 - Error processing file 0104.html: name 'file_id' is not defined
+2025-04-01 12:45:11,302 - config - ERROR - app:162 - Ошибка загрузки файла: name 'file_id' is not defined
+2025-04-01 12:45:25,474 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:45:25,474 - config - INFO - file_processor:275 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:45:25,474 - config - ERROR - file_processor:319 - Error processing file 0104.html: name 'file_id' is not defined
+2025-04-01 12:45:25,504 - config - ERROR - app:162 - Ошибка загрузки файла: name 'file_id' is not defined
+2025-04-01 12:46:43,744 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-04-01 12:47:57,949 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:47:57,950 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:47:57,950 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:47:57,950 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:47:57,950 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:47:58,067 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:47:58,067 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:48:35,470 - config - INFO - config:106 - Запуск приложения в режиме development
+2025-04-01 12:48:35,470 - config - INFO - config:107 - База данных: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:48:35,470 - config - DEBUG - config:108 - Директория загрузок: /home/runner/workspace/uploads
+2025-04-01 12:48:35,470 - config - DEBUG - config:109 - Директория результатов: /home/runner/workspace/results
+2025-04-01 12:48:35,470 - config - DEBUG - config:110 - Директория логов: /home/runner/workspace/logs
+2025-04-01 12:48:35,520 - config - INFO - app:44 - Flask app initialized: DEBUG=True, ENV=development
+2025-04-01 12:48:35,520 - config - INFO - app:45 - Database URI: postgresql://neondb_owner:npg_HJbma5u7sCgO@ep-billowing-art-a61t86s1.us-west-2.aws.neon.tech/neondb?sslmode=require
+2025-04-01 12:50:27,754 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:50:28,373 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216160169_199735&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4209
+2025-04-01 12:50:28,375 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:50:28,375 - config - INFO - file_processor:277 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:50:28,393 - config - INFO - file_processor:299 - Установлено время парсинга для https://vk.com/wall-216160169_199735: 2025-04-01 15:50:33.393890 (МСК)
+2025-04-01 12:50:28,445 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:50:29,085 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-43944775_37754&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4183
+2025-04-01 12:50:29,088 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:50:29,090 - config - INFO - file_processor:277 - Получено время публикации из API для https://vk.com/wall-43944775_37754: 2025-04-01 03:28:48+03:00
+2025-04-01 12:50:29,137 - config - INFO - file_processor:299 - Установлено время парсинга для https://vk.com/wall-43944775_37754: 2025-04-01 15:50:34.137215 (МСК)
+2025-04-01 12:50:29,191 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:50:29,814 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-186300487_37062&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4175
+2025-04-01 12:50:29,817 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:50:29,818 - config - INFO - file_processor:277 - Получено время публикации из API для https://vk.com/wall-186300487_37062: 2025-04-01 06:46:18+03:00
+2025-04-01 12:50:29,854 - config - INFO - file_processor:299 - Установлено время парсинга для https://vk.com/wall-186300487_37062: 2025-04-01 15:50:34.854109 (МСК)
+2025-04-01 12:50:30,174 - config - INFO - scheduler:109 - Scheduled parsing for post 166 at 2025-04-01 15:50:33.393890
+2025-04-01 12:50:30,244 - config - INFO - scheduler:109 - Scheduled parsing for post 167 at 2025-04-01 15:50:34.137215
+2025-04-01 12:50:30,312 - config - INFO - scheduler:109 - Scheduled parsing for post 168 at 2025-04-01 15:50:34.854109
+2025-04-01 12:50:30,328 - config - INFO - file_processor:319 - File 0104.html processed successfully. Found 3 VK links.
+2025-04-01 12:50:34,369 - schedule - DEBUG - __init__:690 - Running job Job(interval=3.21942, unit=seconds, do=parse_with_context, args=(166, <Flask 'app'>), kwargs={})
+2025-04-01 12:50:34,483 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:50:34,483 - config - INFO - vk_parser:501 - Получено время публикации из API (МСК): 2025-04-01 06:53:47
+2025-04-01 12:50:34,483 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:50:34,486 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:50:35,017 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-216160169&item_id=199735&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 232
+2025-04-01 12:50:35,018 - config - DEBUG - vk_parser:47 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 199735, "offset": 0, "owner_id": -216160169, "type": "post"}
+2025-04-01 12:50:35,143 - config - INFO - vk_parser:551 - Успешно обработан пост https://vk.com/wall-216160169_199735 с ID результата 140
+2025-04-01 12:50:35,160 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=3.21942, unit=seconds, do=parse_with_context, args=(166, <Flask 'app'>), kwargs={})"
+2025-04-01 12:50:35,162 - schedule - DEBUG - __init__:690 - Running job Job(interval=3.893038, unit=seconds, do=parse_with_context, args=(167, <Flask 'app'>), kwargs={})
+2025-04-01 12:50:35,273 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:50:35,273 - config - INFO - vk_parser:501 - Получено время публикации из API (МСК): 2025-04-01 03:28:48
+2025-04-01 12:50:35,273 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:50:35,276 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:50:35,822 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-43944775&item_id=37754&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 531
+2025-04-01 12:50:35,824 - config - DEBUG - vk_parser:47 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 37754, "offset": 0, "owner_id": -43944775, "type": "post"}
+2025-04-01 12:50:35,824 - config - INFO - vk_parser:251 - Getting reposts data for wall-43944775_37754
+2025-04-01 12:50:35,827 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:50:36,347 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getReposts?owner_id=-43944775&post_id=37754&count=1000&offset=0&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 62
+2025-04-01 12:50:36,348 - config - DEBUG - vk_parser:47 - Data saved to cache for key wall.getReposts_{"count": 1000, "offset": 0, "owner_id": -43944775, "post_id": 37754}
+2025-04-01 12:50:36,462 - config - INFO - vk_parser:551 - Успешно обработан пост https://vk.com/wall-43944775_37754 с ID результата 141
+2025-04-01 12:50:36,480 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=3.893038, unit=seconds, do=parse_with_context, args=(167, <Flask 'app'>), kwargs={})"
+2025-04-01 12:50:37,485 - schedule - DEBUG - __init__:690 - Running job Job(interval=4.541689, unit=seconds, do=parse_with_context, args=(168, <Flask 'app'>), kwargs={})
+2025-04-01 12:50:37,595 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:50:37,595 - config - INFO - vk_parser:501 - Получено время публикации из API (МСК): 2025-04-01 06:46:18
+2025-04-01 12:50:37,596 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:50:37,598 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-04-01 12:50:38,155 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-186300487&item_id=37062&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 323
+2025-04-01 12:50:38,156 - config - DEBUG - vk_parser:47 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 37062, "offset": 0, "owner_id": -186300487, "type": "post"}
+2025-04-01 12:50:38,273 - config - INFO - vk_parser:551 - Успешно обработан пост https://vk.com/wall-186300487_37062 с ID результата 142
+2025-04-01 12:50:38,289 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=4.541689, unit=seconds, do=parse_with_context, args=(168, <Flask 'app'>), kwargs={})"
+2025-04-01 12:51:15,591 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-216160169_199735"}
+2025-04-01 12:51:15,593 - config - INFO - file_processor:277 - Получено время публикации из API для https://vk.com/wall-216160169_199735: 2025-04-01 06:53:47+03:00
+2025-04-01 12:51:15,602 - config - INFO - file_processor:299 - Установлено время парсинга для https://vk.com/wall-216160169_199735: 2025-04-02 06:43:47 (МСК)
+2025-04-01 12:51:15,614 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-43944775_37754"}
+2025-04-01 12:51:15,616 - config - INFO - file_processor:277 - Получено время публикации из API для https://vk.com/wall-43944775_37754: 2025-04-01 03:28:48+03:00
+2025-04-01 12:51:15,642 - config - INFO - file_processor:299 - Установлено время парсинга для https://vk.com/wall-43944775_37754: 2025-04-02 03:18:48 (МСК)
+2025-04-01 12:51:15,643 - config - DEBUG - vk_parser:33 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-186300487_37062"}
+2025-04-01 12:51:15,672 - config - INFO - file_processor:277 - Получено время публикации из API для https://vk.com/wall-186300487_37062: 2025-04-01 06:46:18+03:00
+2025-04-01 12:51:15,673 - config - INFO - file_processor:299 - Установлено время парсинга для https://vk.com/wall-186300487_37062: 2025-04-02 06:36:18 (МСК)
+2025-04-01 12:51:15,875 - config - INFO - scheduler:109 - Scheduled parsing for post 169 at 2025-04-02 06:43:47
+2025-04-01 12:51:15,946 - config - INFO - scheduler:109 - Scheduled parsing for post 170 at 2025-04-02 03:18:48
+2025-04-01 12:51:16,014 - config - INFO - scheduler:109 - Scheduled parsing for post 171 at 2025-04-02 06:36:18
+2025-04-01 12:51:16,039 - config - INFO - file_processor:319 - File 0104.html processed successfully. Found 3 VK links.

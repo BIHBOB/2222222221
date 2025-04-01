@@ -202,7 +202,10 @@ def delete_file(file_id):
     """Удаление файла и связанных постов"""
     from models import File, Post
     
-    file = File.query.get_or_404(file_id)
+    file = File.query.get(file_id)
+    if not file:
+        flash('Файл не найден', 'danger')
+        return redirect(url_for('archive'))
     
     try:
         # Удаляем связанные посты
@@ -217,7 +220,10 @@ def delete_file(file_id):
         
         # Удаляем физический файл, если существует
         if os.path.exists(file.file_path):
-            os.remove(file.file_path)
+            try:
+                os.remove(file.file_path)
+            except OSError as e:
+                logger.warning(f"Не удалось удалить физический файл: {str(e)}")
         
         # Удаляем запись о файле
         db.session.delete(file)
@@ -225,6 +231,7 @@ def delete_file(file_id):
         
         flash('Файл и связанные данные успешно удалены', 'success')
     except Exception as e:
+        db.session.rollback()
         logger.error(f"Ошибка удаления файла: {str(e)}")
         flash(f'Ошибка удаления файла: {str(e)}', 'danger')
     

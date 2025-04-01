@@ -531,30 +531,32 @@ def parse_vk_post(post_id, app):
                     db.session.add(result)
                     post.status = 'completed'
                     db.session.flush()
-                    
+
                     # Получаем ID результата до коммита
                     result_id = result.id
-                    
+
                     db.session.commit()
-                    
+
                     # Проверяем существование результата после коммита
                     saved_result = ParseResult.query.get(result_id)
                     if not saved_result:
                         raise Exception("Не удалось сохранить результат парсинга")
-                    
+
                     success_message = {
                         "message": "Пост успешно распарсен",
                         "result_id": result_id,
                         "status": "success"
                     }
-                    
+
                     logger.info(f"Успешно обработан пост {post.link} с ID результата {result_id}")
                     return success_message
-                    
+
                 except Exception as e:
                     db.session.rollback()
                     logger.error(f"Ошибка при сохранении результата: {str(e)}")
-                    raise Exception(f"Ошибка при сохранении результата: {str(e)}")
+                    post.status = 'failed'
+                    db.session.commit()
+                    raise
 
             except Exception as e:
                 db.session.rollback()

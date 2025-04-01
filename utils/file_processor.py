@@ -92,12 +92,13 @@ def get_publish_time_from_text(text):
         # No date found, return None
         return None
 
-def calculate_parse_time(publish_time, parse_option):
+def calculate_parse_time(publish_time, parse_option, file_id=None):
     """Calculate parse time based on publish time and option.
 
     Args:
         publish_time: DateTime объект с временем публикации (в московском времени без tzinfo)
         parse_option: Опция парсинга (standard, now, 5min, 30min, 1hour)
+        file_id: ID файла для обновления опции парсинга в БД
 
     Returns:
         DateTime объект с временем парсинга (в московском времени без tzinfo)
@@ -107,6 +108,17 @@ def calculate_parse_time(publish_time, parse_option):
         PARSE_OPTION_5MIN, PARSE_OPTION_30MIN, PARSE_OPTION_1HOUR,
         get_now_moscow, MOSCOW_TZ, UTC_TZ
     )
+
+    # Для немедленного парсинга сразу возвращаем текущее время + 5 секунд
+    if parse_option == PARSE_OPTION_NOW:
+        if file_id:
+            from models import File, db
+            # Update file first to reflect the immediate parsing option
+            file = File.query.get(file_id)
+            if file:
+                file.parse_option = 'now'
+                db.session.commit()
+        return get_now_moscow().replace(tzinfo=None) + timedelta(seconds=5)
 
     if not publish_time:
         # Если время публикации не задано, используем текущее московское
@@ -119,18 +131,14 @@ def calculate_parse_time(publish_time, parse_option):
     if publish_time.tzinfo != MOSCOW_TZ:
         publish_time = publish_time.astimezone(MOSCOW_TZ)
 
-    # Для стандартного режима всегда добавляем 23 часа 50 минут к времени публикации
-    if parse_option == PARSE_OPTION_STANDARD:
-        parse_time = publish_time + timedelta(hours=23, minutes=50)
-    elif parse_option == PARSE_OPTION_NOW:
-        parse_time = get_now_moscow() + timedelta(seconds=10)
-    elif parse_option == PARSE_OPTION_5MIN:
+    # Рассчитываем время парсинга для остальных опций
+    if parse_option == PARSE_OPTION_5MIN:
         parse_time = publish_time + timedelta(hours=23, minutes=55)
     elif parse_option == PARSE_OPTION_30MIN:
         parse_time = publish_time + timedelta(hours=23, minutes=30)
     elif parse_option == PARSE_OPTION_1HOUR:
         parse_time = publish_time + timedelta(hours=23)
-    else:
+    else:  # PARSE_OPTION_STANDARD и прочие
         parse_time = publish_time + timedelta(hours=23, minutes=50)
 
     # Убираем tzinfo для хранения в БД
@@ -286,8 +294,8 @@ def process_file(file_id, app):
                 # Убираем tzinfo для хранения в БД
                 db_publish_time = post_publish_time.replace(tzinfo=None)
                 
-                # Рассчитываем время парсинга (всегда +23:50 от времени публикации)
-                parse_time = db_publish_time + timedelta(hours=23, minutes=50)
+                # Рассчитываем время парсинга в зависимости от опции
+                parse_time = calculate_parse_time(db_publish_time, file.parse_option, file.id)
                 logger.info(f"Установлено время парсинга для {link}: {parse_time} (МСК)")
 
                 # Create post record with actual publish time
