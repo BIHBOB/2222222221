@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block title %}Детали файла - VK Post Parser{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('archive') }}">Архив файлов</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Детали файла</li>
+            </ol>
+        </nav>
+        <h1 class="display-5 mb-4">Детали файла</h1>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Информация о файле</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Имя файла:</strong> {{ file.filename }}</p>
+                        <p><strong>Тип файла:</strong> <span class="badge bg-secondary">{{ file.file_type }}</span></p>
+                        <p><strong>Дата загрузки:</strong> {{ file.uploaded_at_moscow.strftime('%d.%m.%Y %H:%M:%S') }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            <strong>Статус:</strong> 
+                            {% if file.status == 'processing' %}
+                            <span class="badge bg-warning">Обработка</span>
+                            {% elif file.status == 'processed' %}
+                            <span class="badge bg-success">Обработан</span>
+                            {% else %}
+                            <span class="badge bg-danger">Ошибка</span>
+                            {% endif %}
+                        </p>
+                        <p>
+                            <strong>Опция парсинга:</strong>
+                            {% if file.parse_option == 'standard' %}
+                            <span class="badge bg-primary">Стандартный (23:50)</span>
+                            {% elif file.parse_option == '2min' %}
+                            <span class="badge bg-info">Через 2 мин</span>
+                            {% elif file.parse_option == '5min' %}
+                            <span class="badge bg-success">За 5 мин до истечения</span>
+                            {% elif file.parse_option == '30min' %}
+                            <span class="badge bg-warning">За 30 мин до истечения</span>
+                            {% elif file.parse_option == '1hour' %}
+                            <span class="badge bg-danger">За 1 час до истечения</span>
+                            {% else %}
+                            <span class="badge bg-secondary">{{ file.parse_option }}</span>
+                            {% endif %}
+                        </p>
+                        <p><strong>Количество постов:</strong> {{ posts|length }}</p>
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <form action="{{ url_for('delete_file', file_id=file.id) }}" method="POST" onsubmit="return confirm('Вы уверены, что хотите удалить этот файл и все связанные с ним данные?');">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash me-2"></i> Удалить файл
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Извлеченные посты</h5>
+            </div>
+            <div class="card-body">
+                {% if posts %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Ссылка на пост</th>
+                                <th>Время публикации</th>
+                                <th>Время парсинга</th>
+                                <th>Статус</th>
+                                <th>Результаты</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for post in posts %}
+                            <tr>
+                                <td>
+                                    <a href="{{ post.link }}" target="_blank">
+                                        {{ post.link|truncate(40) }}
+                                        <i class="fas fa-external-link-alt ms-1 small"></i>
+                                    </a>
+                                </td>
+                                <td>{{ post.publish_time_moscow.strftime('%d.%m.%Y %H:%M') }}</td>
+                                <td>{{ post.parse_time_moscow.strftime('%d.%m.%Y %H:%M') }}</td>
+                                <td>
+                                    {% if post.status == 'pending' %}
+                                    <span class="badge bg-warning">Ожидает</span>
+                                    {% elif post.status == 'completed' %}
+                                    <span class="badge bg-success">Выполнено</span>
+                                    {% elif post.status == 'cancelled' %}
+                                    <span class="badge bg-secondary">Отменено</span>
+                                    {% else %}
+                                    <span class="badge bg-danger">Ошибка</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if post.results %}
+                                    <a href="{{ url_for('result_detail', result_id=post.results[0].id) }}" class="btn btn-sm btn-info">
+                                        <i class="fas fa-chart-bar me-1"></i> Результаты
+                                    </a>
+                                    {% elif post.status == 'pending' %}
+                                    <form action="{{ url_for('cancel_scheduled', post_id=post.id) }}" method="POST" class="d-inline">
+                                        <button type="submit" class="btn btn-sm btn-secondary">
+                                            <i class="fas fa-ban me-1"></i> Отменить
+                                        </button>
+                                    </form>
+                                    {% else %}
+                                    <form action="{{ url_for('api_parse_post', post_id=post.id) }}" method="POST" class="d-inline">
+                                        <button type="submit" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-sync me-1"></i> Запустить парсинг
+                                        </button>
+                                    </form>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="text-center py-4">
+                    <i class="fas fa-link-slash fa-3x mb-3 text-muted"></i>
+                    <h5 class="text-muted">Нет извлеченных постов</h5>
+                    <p>В файле не найдено ссылок на посты ВКонтакте или файл ещё обрабатывается.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

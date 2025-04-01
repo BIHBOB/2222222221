@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}404 - Страница не найдена{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 text-center">
+        <h1 class="display-1 text-danger mb-4">404</h1>
+        <h2 class="mb-4">Страница не найдена</h2>
+        <p class="lead">
+            К сожалению, запрашиваемая страница не существует или была перемещена.
+        </p>
+        <p class="mb-5">
+            Проверьте правильность введенного URL или воспользуйтесь навигацией для перехода к нужному разделу.
+        </p>
+        <div class="d-flex justify-content-center">
+            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-home me-2"></i> На главную
+            </a>
+            <a href="javascript:history.back()" class="btn btn-outline-secondary btn-lg">
+                <i class="fas fa-arrow-left me-2"></i> Назад
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card bg-dark text-center p-4">
+            <h5 class="mb-3">Возможно, вы искали:</h5>
+            <div class="list-group">
+                <a href="{{ url_for('upload') }}" class="list-group-item list-group-item-action bg-dark text-light">
+                    <i class="fas fa-upload me-2"></i> Загрузка файлов
+                </a>
+                <a href="{{ url_for('archive') }}" class="list-group-item list-group-item-action bg-dark text-light">
+                    <i class="fas fa-archive me-2"></i> Архив файлов
+                </a>
+                <a href="{{ url_for('results') }}" class="list-group-item list-group-item-action bg-dark text-light">
+                    <i class="fas fa-chart-bar me-2"></i> Результаты парсинга
+                </a>
+                <a href="{{ url_for('settings') }}" class="list-group-item list-group-item-action bg-dark text-light">
+                    <i class="fas fa-cog me-2"></i> Настройки
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

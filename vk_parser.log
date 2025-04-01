@@ -1,0 +1,249 @@
+2025-03-31 20:35:49,705 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 20:40:49,755 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 20:43:43,548 - config - ERROR - file_processor:226 - Error processing file -.txt: 'Flask' object has no attribute 'db'
+2025-03-31 20:43:43,549 - config - ERROR - app:134 - Error uploading file: 'Flask' object has no attribute 'db'
+2025-03-31 20:50:18,989 - config - ERROR - file_processor:165 - Error parsing TXT file /home/runner/workspace/uploads/20250331_205018_-.txt: 'utf-8' codec can't decode byte 0xcc in position 1751: invalid continuation byte
+2025-03-31 20:50:18,989 - config - ERROR - file_processor:226 - Error processing file -.txt: 'utf-8' codec can't decode byte 0xcc in position 1751: invalid continuation byte
+2025-03-31 20:50:19,033 - config - ERROR - app:136 - Ошибка загрузки файла: 'utf-8' codec can't decode byte 0xcc in position 1751: invalid continuation byte
+2025-03-31 20:51:18,212 - config - ERROR - file_processor:165 - Error parsing TXT file /home/runner/workspace/uploads/20250331_205118_-.txt: 'utf-8' codec can't decode byte 0xcc in position 1751: invalid continuation byte
+2025-03-31 20:51:18,212 - config - ERROR - file_processor:226 - Error processing file -.txt: 'utf-8' codec can't decode byte 0xcc in position 1751: invalid continuation byte
+2025-03-31 20:51:18,241 - config - ERROR - app:136 - Ошибка загрузки файла: 'utf-8' codec can't decode byte 0xcc in position 1751: invalid continuation byte
+2025-03-31 20:55:09,396 - config - WARNING - file_processor:168 - Не удалось прочитать файл с кодировкой utf-8, пробуем следующую
+2025-03-31 20:55:09,401 - config - INFO - file_processor:165 - Успешно открыт файл с кодировкой cp1251
+2025-03-31 20:55:09,711 - config - INFO - scheduler:106 - Scheduled parsing for post 1 at 2025-03-31 20:55:19.449327
+2025-03-31 20:55:10,001 - config - INFO - scheduler:106 - Scheduled parsing for post 2 at 2025-03-31 20:55:19.449576
+2025-03-31 20:55:10,066 - config - INFO - scheduler:106 - Scheduled parsing for post 3 at 2025-03-31 20:55:19.449630
+2025-03-31 20:55:10,132 - config - INFO - scheduler:106 - Scheduled parsing for post 4 at 2025-03-31 20:55:19.449665
+2025-03-31 20:55:10,196 - config - INFO - scheduler:106 - Scheduled parsing for post 5 at 2025-03-31 20:55:19.449709
+2025-03-31 20:55:10,261 - config - INFO - scheduler:106 - Scheduled parsing for post 6 at 2025-03-31 20:55:19.449740
+2025-03-31 20:55:10,277 - config - INFO - file_processor:244 - File -.txt processed successfully. Found 6 VK links.
+2025-03-31 20:55:19,453 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.73757, unit=seconds, do=parse_with_context, args=(1, <Flask 'app'>), kwargs={})
+2025-03-31 20:55:19,571 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:20,176 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-57042014_54611&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4285
+2025-03-31 20:55:20,178 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-57042014_54611"}
+2025-03-31 20:55:20,180 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:20,715 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-57042014&item_id=54611&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 333
+2025-03-31 20:55:20,716 - config - DEBUG - vk_parser:49 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 54611, "offset": 0, "owner_id": -57042014, "type": "post"}
+2025-03-31 20:55:20,820 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-57042014_54611
+2025-03-31 20:55:20,890 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.73757, unit=seconds, do=parse_with_context, args=(1, <Flask 'app'>), kwargs={})"
+2025-03-31 20:55:20,891 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.448189, unit=seconds, do=parse_with_context, args=(2, <Flask 'app'>), kwargs={})
+2025-03-31 20:55:21,006 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:21,556 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-213065102_61872&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 638
+2025-03-31 20:55:21,558 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-213065102_61872"}
+2025-03-31 20:55:21,664 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-213065102_61872
+2025-03-31 20:55:21,680 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.448189, unit=seconds, do=parse_with_context, args=(2, <Flask 'app'>), kwargs={})"
+2025-03-31 20:55:21,680 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.383088, unit=seconds, do=parse_with_context, args=(3, <Flask 'app'>), kwargs={})
+2025-03-31 20:55:21,796 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:22,388 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216266694_39057&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4274
+2025-03-31 20:55:22,390 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216266694_39057"}
+2025-03-31 20:55:22,392 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:22,916 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-216266694&item_id=39057&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 198
+2025-03-31 20:55:22,917 - config - DEBUG - vk_parser:49 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 39057, "offset": 0, "owner_id": -216266694, "type": "post"}
+2025-03-31 20:55:22,918 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:23,466 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=0&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:23,467 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 0, "q": "wall-216266694_39057"}
+2025-03-31 20:55:23,469 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:23,997 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=200&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:23,998 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 200, "q": "wall-216266694_39057"}
+2025-03-31 20:55:24,001 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:24,535 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=400&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:24,536 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 400, "q": "wall-216266694_39057"}
+2025-03-31 20:55:24,538 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:25,065 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=600&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:25,066 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 600, "q": "wall-216266694_39057"}
+2025-03-31 20:55:25,069 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:25,600 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=800&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:25,601 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 800, "q": "wall-216266694_39057"}
+2025-03-31 20:55:25,702 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-216266694_39057
+2025-03-31 20:55:25,719 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.383088, unit=seconds, do=parse_with_context, args=(3, <Flask 'app'>), kwargs={})"
+2025-03-31 20:55:25,720 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.317366, unit=seconds, do=parse_with_context, args=(4, <Flask 'app'>), kwargs={})
+2025-03-31 20:55:25,836 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:26,421 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-146318041_27612&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4271
+2025-03-31 20:55:26,423 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-146318041_27612"}
+2025-03-31 20:55:26,425 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:26,983 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-146318041&item_id=27612&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 264
+2025-03-31 20:55:26,984 - config - DEBUG - vk_parser:49 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 27612, "offset": 0, "owner_id": -146318041, "type": "post"}
+2025-03-31 20:55:26,986 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:27,560 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=0&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:27,561 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 0, "q": "wall-146318041_27612"}
+2025-03-31 20:55:27,564 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:28,116 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=200&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:28,117 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 200, "q": "wall-146318041_27612"}
+2025-03-31 20:55:28,119 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:28,660 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=400&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:28,661 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 400, "q": "wall-146318041_27612"}
+2025-03-31 20:55:28,662 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:29,195 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=600&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:29,196 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 600, "q": "wall-146318041_27612"}
+2025-03-31 20:55:29,198 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:29,721 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=800&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 20:55:29,722 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 800, "q": "wall-146318041_27612"}
+2025-03-31 20:55:29,823 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-146318041_27612
+2025-03-31 20:55:29,844 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.317366, unit=seconds, do=parse_with_context, args=(4, <Flask 'app'>), kwargs={})"
+2025-03-31 20:55:29,845 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.253106, unit=seconds, do=parse_with_context, args=(5, <Flask 'app'>), kwargs={})
+2025-03-31 20:55:29,960 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:30,565 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-187688466_81673&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4243
+2025-03-31 20:55:30,567 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-187688466_81673"}
+2025-03-31 20:55:30,668 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-187688466_81673
+2025-03-31 20:55:30,685 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.253106, unit=seconds, do=parse_with_context, args=(5, <Flask 'app'>), kwargs={})"
+2025-03-31 20:55:30,685 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.188815, unit=seconds, do=parse_with_context, args=(6, <Flask 'app'>), kwargs={})
+2025-03-31 20:55:30,807 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 20:55:31,407 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-55606947_120927&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4265
+2025-03-31 20:55:31,408 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-55606947_120927"}
+2025-03-31 20:55:31,510 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-55606947_120927
+2025-03-31 20:55:31,528 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.188815, unit=seconds, do=parse_with_context, args=(6, <Flask 'app'>), kwargs={})"
+2025-03-31 20:58:45,558 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:03:37,871 - config - DEBUG - vk_parser:35 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-57042014_54611"}
+2025-03-31 21:03:37,871 - config - DEBUG - vk_parser:35 - Got data from cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 54611, "offset": 0, "owner_id": -57042014, "type": "post"}
+2025-03-31 21:03:37,979 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-57042014_54611
+2025-03-31 21:03:37,995 - config - ERROR - app:385 - Ошибка парсинга поста: Instance <ParseResult at 0x7f0da0710d10> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-03-31 21:03:38,365 - config - DEBUG - vk_parser:35 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-213065102_61872"}
+2025-03-31 21:03:38,447 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-213065102_61872
+2025-03-31 21:03:38,464 - config - ERROR - app:385 - Ошибка парсинга поста: Instance <ParseResult at 0x7f0da08f9290> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-03-31 21:03:39,612 - config - DEBUG - vk_parser:35 - Got data from cache for key wall.getById_{"extended": 1, "posts": "-216266694_39057"}
+2025-03-31 21:03:39,612 - config - DEBUG - vk_parser:35 - Got data from cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 39057, "offset": 0, "owner_id": -216266694, "type": "post"}
+2025-03-31 21:03:39,613 - config - DEBUG - vk_parser:35 - Got data from cache for key newsfeed.search_{"count": 200, "offset": 0, "q": "wall-216266694_39057"}
+2025-03-31 21:03:39,613 - config - DEBUG - vk_parser:35 - Got data from cache for key newsfeed.search_{"count": 200, "offset": 200, "q": "wall-216266694_39057"}
+2025-03-31 21:03:39,613 - config - DEBUG - vk_parser:35 - Got data from cache for key newsfeed.search_{"count": 200, "offset": 400, "q": "wall-216266694_39057"}
+2025-03-31 21:03:39,613 - config - DEBUG - vk_parser:35 - Got data from cache for key newsfeed.search_{"count": 200, "offset": 600, "q": "wall-216266694_39057"}
+2025-03-31 21:03:39,613 - config - DEBUG - vk_parser:35 - Got data from cache for key newsfeed.search_{"count": 200, "offset": 800, "q": "wall-216266694_39057"}
+2025-03-31 21:03:39,709 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-216266694_39057
+2025-03-31 21:03:39,725 - config - ERROR - app:385 - Ошибка парсинга поста: Instance <ParseResult at 0x7f0da08f96d0> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-03-31 21:03:46,282 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:08:46,387 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:15:37,311 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:22:04,297 - config - WARNING - file_processor:168 - Не удалось прочитать файл с кодировкой utf-8, пробуем следующую
+2025-03-31 21:22:04,301 - config - INFO - file_processor:165 - Успешно открыт файл с кодировкой cp1251
+2025-03-31 21:22:06,589 - config - INFO - scheduler:106 - Scheduled parsing for post 7 at 2025-03-31 21:22:14.340090
+2025-03-31 21:22:06,645 - config - INFO - scheduler:106 - Scheduled parsing for post 8 at 2025-03-31 21:22:14.340277
+2025-03-31 21:22:06,700 - config - INFO - scheduler:106 - Scheduled parsing for post 9 at 2025-03-31 21:22:14.340326
+2025-03-31 21:22:06,758 - config - INFO - scheduler:106 - Scheduled parsing for post 10 at 2025-03-31 21:22:14.340368
+2025-03-31 21:22:06,819 - config - INFO - scheduler:106 - Scheduled parsing for post 11 at 2025-03-31 21:22:14.340403
+2025-03-31 21:22:06,875 - config - INFO - scheduler:106 - Scheduled parsing for post 12 at 2025-03-31 21:22:14.340440
+2025-03-31 21:22:06,889 - config - INFO - file_processor:244 - File -.txt processed successfully. Found 6 VK links.
+2025-03-31 21:22:14,787 - schedule - DEBUG - __init__:690 - Running job Job(interval=7.750682, unit=seconds, do=parse_with_context, args=(7, <Flask 'app'>), kwargs={})
+2025-03-31 21:22:14,900 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:15,506 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-57042014_54611&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4285
+2025-03-31 21:22:15,510 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-57042014_54611"}
+2025-03-31 21:22:15,514 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:16,047 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-57042014&item_id=54611&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 333
+2025-03-31 21:22:16,048 - config - DEBUG - vk_parser:49 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 54611, "offset": 0, "owner_id": -57042014, "type": "post"}
+2025-03-31 21:22:16,154 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-57042014_54611
+2025-03-31 21:22:16,169 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=7.750682, unit=seconds, do=parse_with_context, args=(7, <Flask 'app'>), kwargs={})"
+2025-03-31 21:22:16,169 - schedule - DEBUG - __init__:690 - Running job Job(interval=7.695245, unit=seconds, do=parse_with_context, args=(8, <Flask 'app'>), kwargs={})
+2025-03-31 21:22:16,284 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:16,827 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-213065102_61872&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 638
+2025-03-31 21:22:16,828 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-213065102_61872"}
+2025-03-31 21:22:16,923 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-213065102_61872
+2025-03-31 21:22:16,938 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=7.695245, unit=seconds, do=parse_with_context, args=(8, <Flask 'app'>), kwargs={})"
+2025-03-31 21:22:16,938 - schedule - DEBUG - __init__:690 - Running job Job(interval=7.639589, unit=seconds, do=parse_with_context, args=(9, <Flask 'app'>), kwargs={})
+2025-03-31 21:22:17,050 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:17,636 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-216266694_39057&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4274
+2025-03-31 21:22:17,638 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-216266694_39057"}
+2025-03-31 21:22:17,648 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:18,174 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-216266694&item_id=39057&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 198
+2025-03-31 21:22:18,175 - config - DEBUG - vk_parser:49 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 39057, "offset": 0, "owner_id": -216266694, "type": "post"}
+2025-03-31 21:22:18,177 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:18,727 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=0&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:18,728 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 0, "q": "wall-216266694_39057"}
+2025-03-31 21:22:18,730 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:19,258 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=200&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:19,259 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 200, "q": "wall-216266694_39057"}
+2025-03-31 21:22:19,261 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:19,791 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=400&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:19,792 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 400, "q": "wall-216266694_39057"}
+2025-03-31 21:22:19,794 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:20,328 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=600&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:20,330 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 600, "q": "wall-216266694_39057"}
+2025-03-31 21:22:20,331 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:20,854 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-216266694_39057&count=200&offset=800&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:20,855 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 800, "q": "wall-216266694_39057"}
+2025-03-31 21:22:20,952 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-216266694_39057
+2025-03-31 21:22:20,968 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=7.639589, unit=seconds, do=parse_with_context, args=(9, <Flask 'app'>), kwargs={})"
+2025-03-31 21:22:20,968 - schedule - DEBUG - __init__:690 - Running job Job(interval=7.58186, unit=seconds, do=parse_with_context, args=(10, <Flask 'app'>), kwargs={})
+2025-03-31 21:22:21,086 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:21,664 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-146318041_27612&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4269
+2025-03-31 21:22:21,665 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-146318041_27612"}
+2025-03-31 21:22:21,667 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:22,194 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/likes.getList?type=post&owner_id=-146318041&item_id=27612&count=1000&offset=0&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 264
+2025-03-31 21:22:22,195 - config - DEBUG - vk_parser:49 - Data saved to cache for key likes.getList_{"count": 1000, "extended": 1, "item_id": 27612, "offset": 0, "owner_id": -146318041, "type": "post"}
+2025-03-31 21:22:22,198 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:22,740 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=0&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:22,741 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 0, "q": "wall-146318041_27612"}
+2025-03-31 21:22:22,743 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:23,285 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=200&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:23,286 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 200, "q": "wall-146318041_27612"}
+2025-03-31 21:22:23,288 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:23,816 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=400&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:23,817 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 400, "q": "wall-146318041_27612"}
+2025-03-31 21:22:23,819 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:24,350 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=600&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:24,351 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 600, "q": "wall-146318041_27612"}
+2025-03-31 21:22:24,353 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:24,883 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/newsfeed.search?q=wall-146318041_27612&count=200&offset=800&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 65
+2025-03-31 21:22:24,884 - config - DEBUG - vk_parser:49 - Data saved to cache for key newsfeed.search_{"count": 200, "offset": 800, "q": "wall-146318041_27612"}
+2025-03-31 21:22:24,975 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-146318041_27612
+2025-03-31 21:22:24,989 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=7.58186, unit=seconds, do=parse_with_context, args=(10, <Flask 'app'>), kwargs={})"
+2025-03-31 21:22:24,990 - schedule - DEBUG - __init__:690 - Running job Job(interval=7.520889, unit=seconds, do=parse_with_context, args=(11, <Flask 'app'>), kwargs={})
+2025-03-31 21:22:25,107 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:25,730 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-187688466_81673&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4251
+2025-03-31 21:22:25,732 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-187688466_81673"}
+2025-03-31 21:22:25,823 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-187688466_81673
+2025-03-31 21:22:25,837 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=7.520889, unit=seconds, do=parse_with_context, args=(11, <Flask 'app'>), kwargs={})"
+2025-03-31 21:22:25,837 - schedule - DEBUG - __init__:690 - Running job Job(interval=7.464619, unit=seconds, do=parse_with_context, args=(12, <Flask 'app'>), kwargs={})
+2025-03-31 21:22:25,954 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:22:26,574 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-55606947_120927&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 4267
+2025-03-31 21:22:26,576 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-55606947_120927"}
+2025-03-31 21:22:26,677 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-55606947_120927
+2025-03-31 21:22:26,692 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=7.464619, unit=seconds, do=parse_with_context, args=(12, <Flask 'app'>), kwargs={})"
+2025-03-31 21:24:47,772 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:29:47,898 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:34:48,786 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:37:15,897 - config - INFO - file_processor:165 - Успешно открыт файл с кодировкой utf-8
+2025-03-31 21:37:16,039 - config - INFO - file_processor:244 - File 2.txt processed successfully. Found 0 VK links.
+2025-03-31 21:39:11,877 - config - INFO - scheduler:106 - Scheduled parsing for post 13 at 2025-03-31 21:39:21.691049
+2025-03-31 21:39:11,945 - config - INFO - scheduler:106 - Scheduled parsing for post 14 at 2025-03-31 21:39:21.691205
+2025-03-31 21:39:12,012 - config - INFO - scheduler:106 - Scheduled parsing for post 15 at 2025-03-31 21:39:21.691246
+2025-03-31 21:39:12,029 - config - INFO - file_processor:244 - File VK_Adblogger.html processed successfully. Found 3 VK links.
+2025-03-31 21:39:22,564 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.813534, unit=seconds, do=parse_with_context, args=(13, <Flask 'app'>), kwargs={})
+2025-03-31 21:39:22,696 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:39:23,248 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-212158090_59338&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 617
+2025-03-31 21:39:23,249 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-212158090_59338"}
+2025-03-31 21:39:23,351 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-212158090_59338
+2025-03-31 21:39:23,371 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.813534, unit=seconds, do=parse_with_context, args=(13, <Flask 'app'>), kwargs={})"
+2025-03-31 21:39:23,371 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.745656, unit=seconds, do=parse_with_context, args=(14, <Flask 'app'>), kwargs={})
+2025-03-31 21:39:23,478 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:39:24,032 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-38167975_97492&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 585
+2025-03-31 21:39:24,033 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-38167975_97492"}
+2025-03-31 21:39:24,136 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-38167975_97492
+2025-03-31 21:39:24,152 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.745656, unit=seconds, do=parse_with_context, args=(14, <Flask 'app'>), kwargs={})"
+2025-03-31 21:39:24,153 - schedule - DEBUG - __init__:690 - Running job Job(interval=9.679146, unit=seconds, do=parse_with_context, args=(15, <Flask 'app'>), kwargs={})
+2025-03-31 21:39:24,268 - urllib3.connectionpool - DEBUG - connectionpool:1049 - Starting new HTTPS connection (1): api.vk.com:443
+2025-03-31 21:39:24,832 - urllib3.connectionpool - DEBUG - connectionpool:544 - https://api.vk.com:443 "GET /method/wall.getById?posts=-180516646_2400&extended=1&access_token=vk1.a.Ygk9FmH_nNS6QjTmE8z_8xBj8kyu0GYKIkLF3jZ-gmyB9pDXq8UwyD4jQzRvXn1Z6g3SVEiuHqImWC2e0SqWtXhoiSfA6fonXcRM41_Ya6N9DGernw9wPd52kOOsy9rhs7rF9v0c9Tn1i8TBhvmrQi3MaOdmrJA56xG5VmXmO-6L_4ntWG9A7PCeXMtw_6XEDjyjjlaNo-bMZN5SNCJGng&v=5.131 HTTP/1.1" 200 628
+2025-03-31 21:39:24,833 - config - DEBUG - vk_parser:49 - Data saved to cache for key wall.getById_{"extended": 1, "posts": "-180516646_2400"}
+2025-03-31 21:39:24,928 - config - INFO - vk_parser:447 - Successfully parsed post https://vk.com/wall-180516646_2400
+2025-03-31 21:39:24,946 - schedule - DEBUG - __init__:157 - Cancelling job "Job(interval=9.679146, unit=seconds, do=parse_with_context, args=(15, <Flask 'app'>), kwargs={})"
+2025-03-31 21:39:50,951 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:44:51,047 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 21:50:38,492 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:00:28,742 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:05:29,573 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:10:30,954 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:15:31,731 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:20:34,425 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:25:37,247 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:30:37,357 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:35:38,098 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:40:38,836 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:45:39,579 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:50:40,417 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 22:55:41,157 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:00:41,891 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:05:42,744 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:10:43,596 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:15:45,954 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:20:46,837 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:25:47,690 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:30:48,610 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:35:49,647 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})
+2025-03-31 23:40:50,367 - schedule - DEBUG - __init__:690 - Running job Job(interval=5, unit=minutes, do=check_pending_posts, args=(<Flask 'app'>,), kwargs={})

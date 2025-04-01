@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная - VK Post Parser{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1 class="display-5 mb-4">Парсер постов ВКонтакте</h1>
+        <p class="lead">
+            Этот инструмент позволяет анализировать активность в постах ВКонтакте: лайки, комментарии и репосты.
+            Просто загрузите файл со ссылками и получите подробную статистику.
+        </p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card bg-secondary text-white mb-3">
+            <div class="card-body text-center">
+                <h5 class="card-title">Файлов в архиве</h5>
+                <p class="display-4">{{ total_files }}</p>
+                <a href="{{ url_for('archive') }}" class="btn btn-outline-light btn-sm mt-2">Открыть архив</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card bg-info text-white mb-3">
+            <div class="card-body text-center">
+                <h5 class="card-title">Ожидают парсинга</h5>
+                <p class="display-4">{{ pending_posts }}</p>
+                <a href="{{ url_for('scheduled') }}" class="btn btn-outline-light btn-sm mt-2">Посмотреть</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card bg-success text-white mb-3">
+            <div class="card-body text-center">
+                <h5 class="card-title">Успешно обработано</h5>
+                <p class="display-4">{{ completed_posts }}</p>
+                <a href="{{ url_for('results') }}" class="btn btn-outline-light btn-sm mt-2">Результаты</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card bg-danger text-white mb-3">
+            <div class="card-body text-center">
+                <h5 class="card-title">Ошибки парсинга</h5>
+                <p class="display-4">{{ failed_posts }}</p>
+                <a href="{{ url_for('results') }}" class="btn btn-outline-light btn-sm mt-2">Посмотреть</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Недавние загрузки</h5>
+                <a href="{{ url_for('archive') }}" class="btn btn-sm btn-primary">Все файлы</a>
+            </div>
+            <div class="card-body">
+                {% if recent_uploads %}
+                <div class="list-group">
+                    {% for file in recent_uploads %}
+                    <a href="{{ url_for('file_detail', file_id=file.id) }}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ file.filename }}</h6>
+                            <small>{{ file.uploaded_at.strftime('%d.%m.%Y %H:%M') }}</small>
+                        </div>
+                        <p class="mb-1">
+                            <span class="badge {% if file.status == 'processed' %}bg-success{% elif file.status == 'processing' %}bg-warning{% else %}bg-danger{% endif %}">
+                                {{ file.status }}
+                            </span>
+                            Тип файла: {{ file.file_type }}
+                        </p>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-center text-muted">Нет загруженных файлов</p>
+                <div class="text-center">
+                    <a href="{{ url_for('upload') }}" class="btn btn-primary">Загрузить файл</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Недавние результаты</h5>
+                <a href="{{ url_for('results') }}" class="btn btn-sm btn-primary">Все результаты</a>
+            </div>
+            <div class="card-body">
+                {% if recent_results %}
+                <div class="list-group">
+                    {% for result in recent_results %}
+                    <a href="{{ url_for('result_detail', result_id=result.id) }}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ result.post.link|truncate(40) }}</h6>
+                            <small>{{ result.created_at.strftime('%d.%m.%Y %H:%M') }}</small>
+                        </div>
+                        <p class="mb-1">
+                            <i class="far fa-thumbs-up me-1"></i> {{ result.likes_count }}
+                            <i class="far fa-comment ms-3 me-1"></i> {{ result.comments_count }}
+                            <i class="fas fa-retweet ms-3 me-1"></i> {{ result.reposts_count }}
+                        </p>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-center text-muted">Нет результатов парсинга</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Быстрые действия</h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <a href="{{ url_for('upload') }}" class="btn btn-lg btn-primary w-100">
+                            <i class="fas fa-upload me-2"></i> Загрузить файл
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="{{ url_for('scheduled') }}" class="btn btn-lg btn-info w-100">
+                            <i class="fas fa-clock me-2"></i> Запланированные задачи
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="{{ url_for('settings') }}" class="btn btn-lg btn-secondary w-100">
+                            <i class="fas fa-cog me-2"></i> Настройки
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% block title %}Детали результата - VK Post Parser{% endblock %}
+
+{% block head %}
+<style>
+    .user-list {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('results') }}">Результаты</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Детали результата</li>
+            </ol>
+        </nav>
+        <h1 class="display-5 mb-4">Детали результата</h1>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Информация о посте</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>
+                            <strong>Ссылка на пост:</strong> 
+                            <a href="{{ result.post.link }}" target="_blank">
+                                {{ result.post.link }}
+                                <i class="fas fa-external-link-alt ms-1 small"></i>
+                            </a>
+                        </p>
+                        <p><strong>Дата публикации:</strong> {{ result.post.publish_time_moscow.strftime('%d.%m.%Y %H:%M') }}</p>
+                        <p><strong>Дата парсинга:</strong> {{ result.created_at_moscow.strftime('%d.%m.%Y %H:%M') }}</p>
+                        <p>
+                            <strong>Исходный файл:</strong> 
+                            {% if result.post.file %}
+                            <a href="{{ url_for('file_detail', file_id=result.post.file_id) }}">
+                                {{ result.post.file.filename }}
+                            </a>
+                            {% else %}
+                            <span class="text-muted">Нет информации о файле</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-dark">
+                            <div class="card-body">
+                                <h5 class="card-title">Статистика</h5>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span><i class="far fa-thumbs-up me-2"></i> Лайки:</span>
+                                    <span class="badge bg-primary fs-6">{{ result.likes_count }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span><i class="far fa-comment me-2"></i> Комментарии:</span>
+                                    <span class="badge bg-success fs-6">{{ result.comments_count }}</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-retweet me-2"></i> Репосты:</span>
+                                    <span class="badge bg-info fs-6">{{ result.reposts_count }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <a href="{{ url_for('export_result', result_id=result.id) }}" class="btn btn-success">
+                        <i class="fas fa-file-download me-2"></i> Экспорт результатов ({{ export_format }})
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="resultTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="likes-tab" data-bs-toggle="tab" data-bs-target="#likes" type="button" role="tab" aria-controls="likes" aria-selected="true">
+                            <i class="far fa-thumbs-up me-1"></i> Лайки <span class="badge bg-primary">{{ result.likes_count }}</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false">
+                            <i class="far fa-comment me-1"></i> Комментарии <span class="badge bg-success">{{ result.comments_count }}</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="reposts-tab" data-bs-toggle="tab" data-bs-target="#reposts" type="button" role="tab" aria-controls="reposts" aria-selected="false">
+                            <i class="fas fa-retweet me-1"></i> Репосты <span class="badge bg-info">{{ result.reposts_count }}</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="resultTabsContent">
+                    <!-- Likes Tab -->
+                    <div class="tab-pane fade show active" id="likes" role="tabpanel" aria-labelledby="likes-tab">
+                        {% if likes_data %}
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="likesSearch" placeholder="Поиск по имени...">
+                        </div>
+                        <div class="list-group user-list" id="likesList">
+                            {% for user in likes_data %}
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <i class="fas fa-user me-2"></i> {{ user.name or 'Неизвестный пользователь' }}
+                                    </span>
+                                    <a href="https://vk.com/id{{ user.id }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-vk me-1"></i> Профиль
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="text-center py-4">
+                            <i class="far fa-thumbs-up fa-3x mb-3 text-muted"></i>
+                            <h5 class="text-muted">Нет данных о лайках</h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Comments Tab -->
+                    <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+                        {% if comments_data %}
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="commentsSearch" placeholder="Поиск по имени или тексту...">
+                        </div>
+                        <div class="list-group user-list" id="commentsList">
+                            {% for comment in comments_data %}
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <i class="fas fa-user me-2"></i> {{ comment.name or 'Неизвестный пользователь' }}
+                                    </span>
+                                    <a href="https://vk.com/id{{ comment.id }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-vk me-1"></i> Профиль
+                                    </a>
+                                </div>
+                                {% if comment.text %}
+                                <div class="mt-2 p-2 bg-dark rounded">
+                                    <i class="fas fa-quote-left me-2 small"></i>
+                                    {{ comment.text }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="text-center py-4">
+                            <i class="far fa-comment fa-3x mb-3 text-muted"></i>
+                            <h5 class="text-muted">Нет данных о комментариях</h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Reposts Tab -->
+                    <div class="tab-pane fade" id="reposts" role="tabpanel" aria-labelledby="reposts-tab">
+                        {% if reposts_data %}
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="repostsSearch" placeholder="Поиск по имени...">
+                        </div>
+                        <div class="list-group user-list" id="repostsList">
+                            {% for user in reposts_data %}
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <i class="fas fa-user me-2"></i> {{ user.name or 'Неизвестный пользователь' }}
+                                    </span>
+                                    <a href="https://vk.com/id{{ user.id }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fab fa-vk me-1"></i> Профиль
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="text-center py-4">
+                            <i class="fas fa-retweet fa-3x mb-3 text-muted"></i>
+                            <h5 class="text-muted">Нет данных о репостах</h5>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Search functionality for likes
+        const likesSearch = document.getElementById('likesSearch');
+        if (likesSearch) {
+            likesSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const items = document.querySelectorAll('#likesList .list-group-item');
+                
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        // Search functionality for comments
+        const commentsSearch = document.getElementById('commentsSearch');
+        if (commentsSearch) {
+            commentsSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const items = document.querySelectorAll('#commentsList .list-group-item');
+                
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+        
+        // Search functionality for reposts
+        const repostsSearch = document.getElementById('repostsSearch');
+        if (repostsSearch) {
+            repostsSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const items = document.querySelectorAll('#repostsList .list-group-item');
+                
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+    });
+</script>
+{% endblock %}

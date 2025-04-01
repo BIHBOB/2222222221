@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}Загрузка файлов - VK Post Parser{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1 class="display-5 mb-4">Загрузка файлов</h1>
+        <p class="lead">
+            Загрузите файл с ссылками на посты ВКонтакте в формате HTML, PDF или TXT.
+            Система автоматически извлечет ссылки и запланирует их парсинг.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Загрузка файла</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data" id="uploadForm">
+                    <div class="mb-4">
+                        <label for="fileUpload" class="form-label">Выберите файл для загрузки</label>
+                        <input class="form-control" type="file" id="fileUpload" name="file" accept=".html,.pdf,.txt" required>
+                        <small class="text-muted">Поддерживаемые форматы: HTML, PDF, TXT</small>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Выберите время парсинга</label>
+                        <div class="list-group">
+                            {% for option in parse_options %}
+                            <label class="list-group-item d-flex">
+                                <input class="form-check-input me-2" type="radio" name="parse_option" value="{{ option.value }}" 
+                                    {% if option.value == 'standard' %}checked{% endif %}>
+                                <div>
+                                    <strong>{{ option.label }}</strong>
+                                </div>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h6 class="mb-0">О времени парсинга</h6>
+                        </div>
+                        <div class="card-body">
+                            <p>Система автоматически определит время публикации поста из файла. Если время не найдено, будет использовано текущее время.</p>
+                            <p>От времени публикации рассчитывается время парсинга в соответствии с выбранной опцией.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg" id="uploadBtn">
+                            <i class="fas fa-upload me-2"></i> Загрузить и обработать
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h5 class="mb-0">Инструкция по загрузке файлов</h5>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="uploadInstructions">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="htmlFileHeader">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#htmlFileInstructions" aria-expanded="false" aria-controls="htmlFileInstructions">
+                                Загрузка HTML файлов
+                            </button>
+                        </h2>
+                        <div id="htmlFileInstructions" class="accordion-collapse collapse" aria-labelledby="htmlFileHeader" data-bs-parent="#uploadInstructions">
+                            <div class="accordion-body">
+                                <p>HTML файлы можно получить, сохранив страницу ВКонтакте или отчета из Маркет-платформы:</p>
+                                <ol>
+                                    <li>Откройте нужную страницу в браузере</li>
+                                    <li>Нажмите Ctrl+S (или Cmd+S на Mac) для сохранения</li>
+                                    <li>Выберите формат "Веб-страница, полностью" или "HTML"</li>
+                                    <li>Загрузите полученный файл в нашу систему</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="pdfFileHeader">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pdfFileInstructions" aria-expanded="false" aria-controls="pdfFileInstructions">
+                                Загрузка PDF файлов
+                            </button>
+                        </h2>
+                        <div id="pdfFileInstructions" class="accordion-collapse collapse" aria-labelledby="pdfFileHeader" data-bs-parent="#uploadInstructions">
+                            <div class="accordion-body">
+                                <p>PDF файлы часто используются для отчетов и документации:</p>
+                                <ol>
+                                    <li>Убедитесь, что в PDF файле содержатся ссылки на посты ВКонтакте</li>
+                                    <li>Текст в PDF должен быть распознаваемым (не сканированные изображения)</li>
+                                    <li>Система извлечет все ссылки, соответствующие формату постов ВКонтакте</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="txtFileHeader">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#txtFileInstructions" aria-expanded="false" aria-controls="txtFileInstructions">
+                                Загрузка TXT файлов
+                            </button>
+                        </h2>
+                        <div id="txtFileInstructions" class="accordion-collapse collapse" aria-labelledby="txtFileHeader" data-bs-parent="#uploadInstructions">
+                            <div class="accordion-body">
+                                <p>Текстовые файлы - самый простой способ загрузки ссылок:</p>
+                                <ol>
+                                    <li>Создайте обычный текстовый файл</li>
+                                    <li>Вставьте ссылки на посты ВКонтакте - по одной на строку или с любым разделителем</li>
+                                    <li>Для указания времени публикации, добавьте дату в формате ДД.ММ.ГГГГ вместе со ссылкой</li>
+                                </ol>
+                                <p>Пример содержимого TXT файла:</p>
+                                <pre>https://vk.com/wall-123456_789 01.05.2023
+https://vk.com/wall-654321_987 02.05.2023</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+{% endblock %}

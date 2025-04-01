@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block title %}Настройки - VK Post Parser{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1 class="display-5 mb-4">Настройки</h1>
+        <p class="lead">
+            Настройте параметры парсера для оптимальной работы. Укажите токен API ВКонтакте и настройте параметры парсинга.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Общие настройки</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('settings') }}">
+                    <div class="mb-4">
+                        <label for="vk_token" class="form-label">Токен API ВКонтакте</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="vk_token" name="vk_token" 
+                                value="{{ settings.vk_token }}" placeholder="Введите токен API ВКонтакте">
+                            <button class="btn btn-outline-secondary" type="button" id="toggleToken">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <small class="text-muted">
+                            Токен необходим для доступа к API ВКонтакте. 
+                            <a href="https://vk.com/dev/access_token" target="_blank">Как получить токен?</a>
+                        </small>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Опция парсинга по умолчанию</label>
+                        <div class="list-group">
+                            {% for option in parse_options %}
+                            <label class="list-group-item d-flex">
+                                <input class="form-check-input me-2" type="radio" name="default_parse_option" 
+                                    value="{{ option.value }}" {% if settings.default_parse_option == option.value %}checked{% endif %}>
+                                <div>
+                                    <strong>{{ option.label }}</strong>
+                                </div>
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Формат экспорта результатов</label>
+                        <div class="list-group">
+                            <label class="list-group-item d-flex">
+                                <input class="form-check-input me-2" type="radio" name="export_format" 
+                                    value="txt" {% if settings.export_format == 'txt' %}checked{% endif %}>
+                                <div>
+                                    <strong>TXT</strong>
+                                    <div class="small text-muted">Простой текстовый формат</div>
+                                </div>
+                            </label>
+                            <label class="list-group-item d-flex">
+                                <input class="form-check-input me-2" type="radio" name="export_format" 
+                                    value="csv" {% if settings.export_format == 'csv' %}checked{% endif %}>
+                                <div>
+                                    <strong>CSV</strong>
+                                    <div class="small text-muted">Удобно для открытия в Excel или Google Sheets</div>
+                                </div>
+                            </label>
+                            <label class="list-group-item d-flex">
+                                <input class="form-check-input me-2" type="radio" name="export_format" 
+                                    value="excel" {% if settings.export_format == 'excel' %}checked{% endif %}>
+                                <div>
+                                    <strong>Excel</strong>
+                                    <div class="small text-muted">Прямой экспорт в формат .xlsx</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <h6 class="alert-heading"><i class="fas fa-info-circle me-2"></i> О токене ВКонтакте</h6>
+                        <p class="mb-0">
+                            Для парсинга постов ВКонтакте требуется токен API с правами на чтение стены и доступ к записям сообществ. 
+                            Убедитесь, что ваш токен имеет нужные права и не используется в других приложениях.
+                        </p>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i> Сохранить настройки
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h5 class="mb-0">Информация о системе</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Разработка:</strong> @Makidami1</p>
+                        <p><strong>Формат экспорта:</strong> {{ settings.export_format|upper }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Интервал между публикацией и парсингом:</strong> {{ settings.parse_interval }} часов</p>
+                        <p><strong>Директория для результатов:</strong> results/</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle password visibility
+        const toggleBtn = document.getElementById('toggleToken');
+        const tokenInput = document.getElementById('vk_token');
+        
+        if (toggleBtn && tokenInput) {
+            toggleBtn.addEventListener('click', function() {
+                const type = tokenInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                tokenInput.setAttribute('type', type);
+                
+                // Toggle icon
+                const icon = toggleBtn.querySelector('i');
+                if (icon) {
+                    if (type === 'password') {
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    } else {
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    }
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}
